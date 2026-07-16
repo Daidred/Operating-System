@@ -108,8 +108,6 @@ export default function WorkloadTracker() {
   });
   const employeeChartData = Object.entries(byEmployeeChart).map(([name, v]) => ({ name, ...v })).sort((a, b) => b.hours - a.hours);
 
-  const PIE_COLORS = ['hsl(199,89%,42%)', 'hsl(173,58%,39%)', 'hsl(43,74%,56%)', 'hsl(27,87%,57%)', 'hsl(12,76%,51%)', 'hsl(260,60%,55%)', 'hsl(340,75%,55%)'];
-
   if (loadingDisc) {
     return <div className="flex items-center justify-center h-64"><div className="w-8 h-8 border-4 border-muted border-t-primary rounded-full animate-spin" /></div>;
   }

@@ -207,7 +207,6 @@ function ShipmentRow({ shipment, onSave, onDelete, onArchive, onUnarchive, provi
 
   const isSea = row.mode === 'Sea';
   const rowBg = STATUS_COLORS[row.status] || 'bg-white';
-  const hasSublines = (row.sublines || []).length > 0;
 
   return (
     <>

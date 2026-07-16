@@ -9,22 +9,6 @@ import { Plus, Trash2, User, Mail, Phone, Globe, Pencil, X, Check, ChevronDown, 
 const BLANK_FORM = { name: '', country: '', contact_person: '', email: '', phone: '' };
 const BLANK_CONTACT = { name: '', role: '', email: '', phone: '' };
 
-// ─── Inline editable field ───────────────────────────────────────────────────
-function EditableField({ icon: Icon, value, onChange, placeholder, type = 'text', href }) {
-  return (
-    <div className="flex items-center gap-1">
-      <Icon className="w-3 h-3 text-muted-foreground shrink-0" />
-      <input
-        type={type}
-        value={value || ''}
-        onChange={e => onChange(e.target.value)}
-        placeholder={placeholder}
-        className="flex-1 text-xs bg-transparent border-0 outline-none focus:bg-primary/5 rounded px-1 py-0.5 min-w-0 placeholder:text-muted-foreground/40"
-      />
-    </div>
-  );
-}
-
 // ─── Contact row (add / display) ────────────────────────────────────────────
 function ContactRow({ contact, onUpdate, onRemove, isNew = false, onSave, onCancel }) {
   const [editing, setEditing] = useState(isNew);
@@ -106,12 +90,6 @@ function SupplierCard({ link, supplier, onRemoveLink, onUpdateSupplier }) {
     const newContacts = contacts.filter((_, i) => i !== idx);
     onUpdateSupplier({ ...s, contacts: newContacts });
   };
-
-  const allContacts = [
-    // primary contact as first entry (if exists)
-    ...(s.contact_person || s.email ? [{ name: s.contact_person, email: s.email, phone: s.phone, _primary: true }] : []),
-    ...contacts,
-  ];
 
   return (
     <div className="rounded-lg border border-border bg-card overflow-hidden">

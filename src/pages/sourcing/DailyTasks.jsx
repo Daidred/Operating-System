@@ -187,7 +187,7 @@ export default function DailyTasks({ onNavigate }) {
   const overdueTasks = filtered.filter(t => !t.done && t.due_date && isPast(parseISO(t.due_date)) && !isToday(parseISO(t.due_date)));
   const upcomingTasks = filtered.filter(t => !t.done && (!t.due_date || (!isPast(parseISO(t.due_date)) && !isToday(parseISO(t.due_date)))));
 
-  const handleNavigateToProject = (projectId) => {
+  const handleNavigateToProject = () => {
     if (onNavigate) onNavigate('projects');
   };
 

@@ -15,7 +15,6 @@ import { format, subDays, subMonths, startOfMonth, endOfMonth, startOfQuarter, e
 const ALL_BUS = ["Food Service", "Retail", "CTK", "F&B", "QA/QC", "DC 1", "DC 2", "Marketing", "Purchasing"];
 const IMPACT_COLORS = { Critical: '#dc2626', High: '#ea580c', Medium: '#ca8a04', Low: '#16a34a' };
 const STATUS_COLORS = { Open: '#3b82f6', 'Under Review': '#8b5cf6', Validated: '#06b6d4', Resolved: '#16a34a', Rejected: '#6b7280' };
-const CHART_COLORS = ['#0e6ea8', '#0891b2', '#059669', '#d97706', '#dc2626', '#7c3aed', '#db2777', '#065f46'];
 
 export default function Reports() {
   const [dateFrom, setDateFrom] = useState(format(subMonths(new Date(), 1), 'yyyy-MM-dd'));
@@ -76,7 +75,6 @@ export default function Reports() {
     totalAdditionalCost += (d.additional_cost || 0);
   });
 
-  const totalWorkloadHours = filteredWorkloads.reduce((s, w) => s + (w.hours_spent || 0), 0);
   const overtimeHours = filteredWorkloads.filter(w => w.overtime).reduce((s, w) => s + (w.hours_spent || 0), 0);
   const workloadCost = filteredWorkloads.reduce((s, w) => s + (w.estimated_cost || 0), 0);
 
@@ -93,7 +91,6 @@ export default function Reports() {
   const issueChartData = Object.entries(byIssueType).sort(([,a],[,b]) => b-a).slice(0, 6).map(([name, value]) => ({
     name: name.length > 20 ? name.substring(0, 18) + '...' : name, fullName: name, value
   }));
-  const statusData = Object.entries(byStatus).filter(([,c]) => c > 0).map(([name, value]) => ({ name, value }));
 
   // By employee workload
   const byEmployee = {};

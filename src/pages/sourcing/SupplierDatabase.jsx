@@ -13,10 +13,6 @@ import SupplierDetailPanel from '@/components/suppliers/SupplierDetailPanel';
 const APPROVAL_STATUSES = ['Not Started', 'Pending', 'In Review', 'Approved', 'Rejected'];
 const SUPPLIER_STATUSES = ['Active', 'Inactive', 'Blacklisted', 'Approved', 'Rejected'];
 
-const STATUS_COLOR = {
-  Active: 'bg-emerald-100 text-emerald-700', Inactive: 'bg-slate-100 text-slate-600',
-  Blacklisted: 'bg-red-100 text-red-700', Approved: 'bg-green-100 text-green-700', Rejected: 'bg-red-100 text-red-700',
-};
 
 const APPROVAL_BADGE = {
   'Pending Approval': { cls: 'bg-amber-100 text-amber-700', icon: Clock },

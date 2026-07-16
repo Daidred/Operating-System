@@ -10,13 +10,6 @@ import StatusBadge from '@/components/shared/StatusBadge';
 import { format, subDays } from 'date-fns';
 import { Link } from 'react-router-dom';
 
-const BU_COLORS = {
-  'Food Service': 'hsl(199, 89%, 32%)',
-  'Retail': 'hsl(173, 58%, 39%)',
-  'CTK': 'hsl(43, 74%, 56%)',
-  'F&B': 'hsl(12, 76%, 61%)',
-};
-
 const PIE_COLORS = ['hsl(199, 89%, 42%)', 'hsl(173, 58%, 45%)', 'hsl(43, 74%, 56%)', 'hsl(12, 76%, 61%)'];
 
 export default function Dashboard() {

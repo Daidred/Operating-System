@@ -55,7 +55,7 @@ export default function WorkloadForm({ open, onClose, discrepancyId, onSuccess }
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSaving(true);
-    const entry = await base44.entities.WorkloadEntry.create(form);
+    await base44.entities.WorkloadEntry.create(form);
 
     // Auto-sync purchasing_hours_lost on the linked discrepancy
     const linkedDiscId = form.discrepancy_id;

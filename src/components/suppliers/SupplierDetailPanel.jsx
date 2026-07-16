@@ -18,8 +18,6 @@ const FILE_ICONS = { pdf: '📄', xlsx: '📊', xls: '📊', jpg: '🖼️', jpe
 const getIcon = (name) => FILE_ICONS[name?.split('.').pop()?.toLowerCase()] || '📎';
 
 const DOC_CATEGORIES = ['Quotation', 'Product Specification', 'Certification', 'Test Report', 'Technical Data Sheet', 'Product Photo', 'Contract', 'Other'];
-const INCOTERMS = ['EXW', 'FOB', 'CFR', 'CIF', 'DAP', 'DDP', 'FCA', 'Other'];
-const CURRENCIES = ['USD', 'EUR', 'THB', 'CNY', 'GBP', 'Other'];
 
 function RatingStars({ value, onChange }) {
   return (

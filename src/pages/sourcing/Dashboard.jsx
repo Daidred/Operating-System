@@ -5,7 +5,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { AlertTriangle, Clock, MessageSquare, FolderOpen, CheckCircle2, FileText, FlaskConical, Users, TrendingUp } from 'lucide-react';
 import { isToday, isPast, addDays, parseISO } from 'date-fns';
 
-const today = () => new Date().toISOString().split('T')[0];
 
 function KpiCard({ icon: Icon, label, value, color = 'text-primary', bg = 'bg-primary/10', onClick }) {
   return (
@@ -75,12 +74,6 @@ export default function SourcingDashboard({ onNavigate }) {
   const approvedSuppliers = useMemo(() => suppliers.filter(s => s.status === 'Approved'), [suppliers]);
   const expiringDocs = useMemo(() => documents.filter(d => isDueSoon(d.expiry_date, 30)), [documents]);
   const expiringQuotations = useMemo(() => quotations.filter(q => isDueSoon(q.validity_date, 7)), [quotations]);
-  const projectsByStatus = useMemo(() => {
-    const map = {};
-    projects.filter(p => !p.archived).forEach(p => { map[p.status] = (map[p.status] || 0) + 1; });
-    return map;
-  }, [projects]);
-
   return (
     <div className="space-y-6">
       {/* KPIs */}

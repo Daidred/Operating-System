@@ -22,7 +22,6 @@ const BUS_UNITS = ["Food Service", "Retail", "CTK", "F&B", "QA/QC", "DC 1", "DC 
 const IMPACT_LEVELS = ["Low", "Medium", "High", "Critical"];
 
 export default function DiscrepancyForm({ open, onClose, onSuccess, editData }) {
-  const [currentUser, setCurrentUser] = useState(null);
   const [form, setForm] = useState(editData || {
     title: '',
     date: format(new Date(), 'yyyy-MM-dd'),
@@ -44,7 +43,6 @@ export default function DiscrepancyForm({ open, onClose, onSuccess, editData }) 
   useEffect(() => {
     if (!editData) {
       base44.auth.me().then(user => {
-        setCurrentUser(user);
         setForm(prev => ({
           ...prev,
           requester: user.email || '',

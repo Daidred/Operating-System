@@ -12,12 +12,6 @@ const CATEGORIES = ['Shrimp', 'Salmon', 'Tuna', 'Crab', 'Squid', 'Shellfish', 'V
 const PRIORITIES = ['Low', 'Medium', 'High', 'Urgent'];
 const STATUSES = ['Idea', 'Supplier Search', 'Supplier Contacted', 'Quotation Received', 'Sample Requested', 'Sample Testing', 'Negotiation', 'Approved', 'Rejected', 'Paused'];
 
-const PRIORITY_COLOR = { Urgent: 'bg-red-100 text-red-700', High: 'bg-orange-100 text-orange-700', Medium: 'bg-yellow-100 text-yellow-700', Low: 'bg-slate-100 text-slate-600' };
-const STATUS_COLOR = {
-  Idea: 'bg-slate-100 text-slate-600', 'Supplier Search': 'bg-blue-100 text-blue-700', 'Supplier Contacted': 'bg-indigo-100 text-indigo-700',
-  'Quotation Received': 'bg-purple-100 text-purple-700', 'Sample Requested': 'bg-amber-100 text-amber-700', 'Sample Testing': 'bg-orange-100 text-orange-700',
-  Negotiation: 'bg-cyan-100 text-cyan-700', Approved: 'bg-emerald-100 text-emerald-700', Rejected: 'bg-red-100 text-red-700', Paused: 'bg-gray-100 text-gray-600',
-};
 
 function CI({ value, onChange, type = 'text', placeholder = '', className = '', autoFocus = false }) {
   return <input autoFocus={autoFocus} type={type} value={value || ''} onChange={e => onChange(e.target.value)} placeholder={placeholder}
@@ -165,7 +159,6 @@ export default function SourcingProjects({ filterArchived = false, filterStatus 
   const [filterPriority, setFilterPriority] = useState('all');
   const [filterStatusLocal, setFilterStatusLocal] = useState(filterStatus || 'all');
   const [adding, setAdding] = useState(false);
-  const [showArchived, setShowArchived] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
   const [currentUser, setCurrentUser] = useState(null);
 
