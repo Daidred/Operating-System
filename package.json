@@ -1,19 +1,22 @@
 {
-  "name": "base44-app",
+  "name": "opstrace",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "concurrently -k -n server,vite \"node server/index.js\" \"vite\"",
+    "dev:client": "vite",
+    "dev:server": "node server/index.js",
     "build": "vite build",
+    "start": "node server/index.js",
+    "seed": "node server/seed.js",
     "lint": "eslint . --quiet",
     "lint:fix": "eslint . --fix",
     "typecheck": "tsc -p ./jsconfig.json",
     "preview": "vite preview"
   },
   "dependencies": {
-    "@base44/sdk": "^0.8.32",
-    "@base44/vite-plugin": "^1.0.23",
+    "@anthropic-ai/sdk": "^0.71.0",
     "@hello-pangea/dnd": "^17.0.0",
     "@hookform/resolvers": "^4.1.2",
     "@radix-ui/react-accordion": "^1.2.3",
@@ -46,12 +49,15 @@
     "@stripe/react-stripe-js": "^3.0.0",
     "@stripe/stripe-js": "^5.2.0",
     "@tanstack/react-query": "^5.84.1",
+    "better-sqlite3": "^12.4.1",
     "canvas-confetti": "^1.9.4",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.0.0",
+    "cookie-parser": "^1.4.7",
     "date-fns": "^3.6.0",
     "embla-carousel-react": "^8.5.2",
+    "express": "^5.1.0",
     "framer-motion": "^11.16.4",
     "html2canvas": "^1.4.1",
     "input-otp": "^1.4.2",
@@ -59,7 +65,9 @@
     "lodash": "^4.17.21",
     "lucide-react": "^0.475.0",
     "moment": "^2.30.1",
+    "multer": "^2.0.2",
     "next-themes": "^0.4.4",
+    "nodemailer": "^7.0.9",
     "react": "^18.2.0",
     "react-day-picker": "^8.10.1",
     "react-dom": "^18.2.0",
@@ -95,6 +103,7 @@
     "postcss": "^8.5.3",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.8.2",
-    "vite": "^6.1.0"
+    "vite": "^6.1.0",
+    "concurrently": "^9.1.2"
   }
 }
