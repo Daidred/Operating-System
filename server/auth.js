@@ -97,7 +97,7 @@ authRouter.post('/reset-request', (req, res) => {
     const token = crypto.randomBytes(24).toString('hex');
     db.prepare('UPDATE users SET reset_token = ?, reset_token_expires = ? WHERE id = ?')
       .run(token, Date.now() + 60 * 60 * 1000, user.id);
-    const base = process.env.APP_URL || 'http://localhost:5173';
+    const base = process.env.APP_URL || process.env.RENDER_EXTERNAL_URL || 'http://localhost:5173';
     const link = `${base}/reset-password?token=${token}`;
     // Without an SMTP server the reset link is printed to the server log so an
     // admin can pass it to the user.

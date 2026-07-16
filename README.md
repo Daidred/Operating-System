@@ -78,13 +78,17 @@ src/
 
 ## Deploying
 
-Any Node.js host works (a small VPS, Railway, Render, Fly.io):
+The repo ships two ready-made deployment paths. Either way, the app needs a **persistent disk** (`DATA_DIR`) — it holds the database and all uploaded documents.
+
+**Render (easiest):** a [`render.yaml`](render.yaml) Blueprint is included. On [render.com](https://render.com): **New + → Blueprint** → select this repo → Apply. It provisions the web service plus a 1 GB persistent disk automatically. Add `ANTHROPIC_API_KEY` in the service's Environment tab to enable AI features.
+
+**Docker (Railway, Fly.io, any VPS):** a [`Dockerfile`](Dockerfile) is included. Mount a volume at `/data`. Example: `docker run -p 3001:3001 -v opstrace-data:/data opstrace`.
+
+**Manual (any Node host):**
 
 1. `npm install && npm run build`
-2. Set env vars (at minimum consider `COOKIE_SECURE=true` behind HTTPS and a persistent `DATA_DIR`)
+2. Set env vars (`COOKIE_SECURE=true` behind HTTPS, persistent `DATA_DIR`)
 3. `npm start` (put it behind a reverse proxy such as Caddy or Nginx for HTTPS)
-
-Make sure `DATA_DIR` is on a persistent disk — it holds the database and all uploaded documents.
 
 ## History
 

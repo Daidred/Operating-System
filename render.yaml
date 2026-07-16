@@ -1,0 +1,22 @@
+# Render Blueprint — deploys OpsTrace with a persistent disk for the
+# database and uploaded files. In Render: New + → Blueprint → pick this repo.
+services:
+  - type: web
+    name: opstrace
+    runtime: node
+    plan: starter # disks require a paid instance; starter is the smallest
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: DATA_DIR
+        value: /var/data
+      - key: COOKIE_SECURE
+        value: "true"
+      # Optional — set these in the Render dashboard to enable AI and email:
+      # - ANTHROPIC_API_KEY
+      # - SMTP_URL, SMTP_FROM
+    disk:
+      name: opstrace-data
+      mountPath: /var/data
+      sizeGB: 1
