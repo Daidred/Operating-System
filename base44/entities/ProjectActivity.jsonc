@@ -1,0 +1,36 @@
+{
+  "name": "ProjectActivity",
+  "type": "object",
+  "properties": {
+    "project_id": {
+      "type": "string"
+    },
+    "activity_type": {
+      "type": "string",
+      "enum": [
+        "supplier_added",
+        "email_sent",
+        "email_received",
+        "document_uploaded",
+        "comment_added",
+        "followup_completed",
+        "status_changed"
+      ]
+    },
+    "description": {
+      "type": "string"
+    },
+    "actor_name": {
+      "type": "string"
+    },
+    "reference_id": {
+      "type": "string",
+      "description": "ID of the related entity (email, comment, etc.)"
+    }
+  },
+  "required": [
+    "project_id",
+    "activity_type",
+    "description"
+  ]
+}

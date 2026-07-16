@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-inter: 'Inter', sans-serif;
+    /* Thammachart Seafood Retail — dark teal navy + salmon coral */
+    --background: 200 18% 96%;
+    --foreground: 200 40% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 200 40% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 200 40% 12%;
+    --primary: 9 72% 67%;       /* salmon coral #e8796a */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 200 18% 93%;
+    --secondary-foreground: 200 40% 18%;
+    --muted: 200 14% 93%;
+    --muted-foreground: 200 15% 46%;
+    --accent: 200 42% 19%;      /* dark teal #1a3a4a */
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 200 15% 88%;
+    --input: 200 15% 88%;
+    --ring: 9 72% 67%;
+    --chart-1: 9 72% 67%;
+    --chart-2: 200 42% 30%;
+    --chart-3: 35 80% 65%;
+    --chart-4: 160 45% 45%;
+    --chart-5: 340 60% 60%;
+    --radius: 0.625rem;
+    --sidebar-background: 200 42% 19%;   /* dark teal #1a3a4a */
+    --sidebar-foreground: 200 20% 88%;
+    --sidebar-primary: 9 72% 67%;        /* salmon coral */
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 200 38% 25%;
+    --sidebar-accent-foreground: 200 20% 92%;
+    --sidebar-border: 200 38% 25%;
+    --sidebar-ring: 9 72% 67%;
+  }
+
+  .dark {
+    --background: 200 42% 8%;
+    --foreground: 200 20% 92%;
+    --card: 200 42% 11%;
+    --card-foreground: 200 20% 92%;
+    --popover: 200 42% 11%;
+    --popover-foreground: 200 20% 92%;
+    --primary: 9 72% 67%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 200 38% 16%;
+    --secondary-foreground: 200 20% 92%;
+    --muted: 200 38% 16%;
+    --muted-foreground: 200 15% 56%;
+    --accent: 200 42% 30%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 200 38% 20%;
+    --input: 200 38% 20%;
+    --ring: 9 72% 67%;
+    --chart-1: 9 72% 67%;
+    --chart-2: 200 42% 40%;
+    --chart-3: 35 80% 65%;
+    --chart-4: 160 45% 45%;
+    --chart-5: 340 60% 60%;
+    --sidebar-background: 200 42% 8%;
+    --sidebar-foreground: 200 20% 88%;
+    --sidebar-primary: 9 72% 67%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 200 38% 16%;
+    --sidebar-accent-foreground: 200 20% 92%;
+    --sidebar-border: 200 38% 16%;
+    --sidebar-ring: 9 72% 67%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-inter;
+  }
+}

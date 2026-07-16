@@ -1,0 +1,61 @@
+{
+  "name": "FollowUp",
+  "type": "object",
+  "properties": {
+    "supplier_id": {
+      "type": "string"
+    },
+    "supplier_name": {
+      "type": "string"
+    },
+    "project_id": {
+      "type": "string"
+    },
+    "project_name": {
+      "type": "string"
+    },
+    "last_message_sent": {
+      "type": "string"
+    },
+    "date_contacted": {
+      "type": "string",
+      "format": "date"
+    },
+    "reply_status": {
+      "type": "string",
+      "enum": [
+        "No Reply",
+        "Replied",
+        "Quotation Sent",
+        "Sample Arranged",
+        "Rejected",
+        "Waiting"
+      ],
+      "default": "No Reply"
+    },
+    "next_action": {
+      "type": "string"
+    },
+    "next_followup_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "Low",
+        "Medium",
+        "High",
+        "Urgent"
+      ],
+      "default": "Medium"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "supplier_name",
+    "date_contacted"
+  ]
+}

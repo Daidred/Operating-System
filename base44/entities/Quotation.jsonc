@@ -1,0 +1,109 @@
+{
+  "name": "Quotation",
+  "type": "object",
+  "properties": {
+    "supplier_id": {
+      "type": "string"
+    },
+    "supplier_name": {
+      "type": "string"
+    },
+    "project_id": {
+      "type": "string"
+    },
+    "project_name": {
+      "type": "string"
+    },
+    "product": {
+      "type": "string"
+    },
+    "specification": {
+      "type": "string"
+    },
+    "origin": {
+      "type": "string"
+    },
+    "packing": {
+      "type": "string"
+    },
+    "moq": {
+      "type": "string"
+    },
+    "price": {
+      "type": "number"
+    },
+    "currency": {
+      "type": "string",
+      "default": "USD"
+    },
+    "incoterm": {
+      "type": "string",
+      "enum": [
+        "EXW",
+        "FOB",
+        "CFR",
+        "CIF",
+        "DAP",
+        "DDP",
+        "FCA",
+        "Other"
+      ]
+    },
+    "landed_cost_thb": {
+      "type": "number",
+      "description": "Landed cost in THB per unit/kg"
+    },
+    "lead_time": {
+      "type": "string"
+    },
+    "validity_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "payment_terms": {
+      "type": "string"
+    },
+    "documents_received": {
+      "type": "boolean",
+      "default": false
+    },
+    "comments": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Pending Review",
+        "Shortlisted",
+        "Rejected",
+        "Approved"
+      ],
+      "default": "Pending Review"
+    },
+    "received_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "supplier_name",
+    "product"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "name": "ProjectDocument",
+  "type": "object",
+  "properties": {
+    "project_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "file_type": {
+      "type": "string"
+    },
+    "document_category": {
+      "type": "string",
+      "enum": [
+        "Quotation",
+        "Product Specification",
+        "Certification",
+        "Test Report",
+        "Product Photo",
+        "Contract",
+        "Shipment Document",
+        "Excel File",
+        "PDF",
+        "Other"
+      ],
+      "default": "Other"
+    },
+    "version": {
+      "type": "integer",
+      "default": 1
+    },
+    "uploaded_by_name": {
+      "type": "string"
+    },
+    "uploaded_by_email": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "project_id",
+    "name",
+    "url"
+  ]
+}

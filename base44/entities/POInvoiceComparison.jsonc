@@ -1,0 +1,92 @@
+{
+  "name": "POInvoiceComparison",
+  "type": "object",
+  "properties": {
+    "po_filename": {
+      "type": "string"
+    },
+    "invoice_filename": {
+      "type": "string"
+    },
+    "po_file_url": {
+      "type": "string"
+    },
+    "invoice_file_url": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Processing",
+        "Complete",
+        "Error"
+      ],
+      "default": "Processing"
+    },
+    "po_data": {
+      "type": "object"
+    },
+    "invoice_data": {
+      "type": "object"
+    },
+    "comparison_result": {
+      "type": "object"
+    },
+    "project_id": {
+      "type": "string",
+      "description": "Linked sourcing project ID for budget comparison"
+    },
+    "project_name": {
+      "type": "string"
+    },
+    "budget_check": {
+      "type": "object",
+      "description": "Result of comparing this PO/Invoice against the project budget",
+      "properties": {
+        "project_target_price": {
+          "type": "number"
+        },
+        "project_currency": {
+          "type": "string"
+        },
+        "po_total": {
+          "type": "number"
+        },
+        "invoice_total": {
+          "type": "number"
+        },
+        "over_budget": {
+          "type": "boolean"
+        },
+        "variance_amount": {
+          "type": "number"
+        },
+        "variance_pct": {
+          "type": "number"
+        },
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "Within Budget",
+            "Over Budget",
+            "No Budget Set",
+            "Insufficient Data"
+          ]
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "created_by_name": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "po_filename",
+    "invoice_filename"
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "name": "Sample",
+  "type": "object",
+  "properties": {
+    "supplier_id": {
+      "type": "string"
+    },
+    "supplier_name": {
+      "type": "string"
+    },
+    "project_id": {
+      "type": "string"
+    },
+    "project_name": {
+      "type": "string"
+    },
+    "product": {
+      "type": "string"
+    },
+    "requested_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "shipped_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "received_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "courier_tracking": {
+      "type": "string"
+    },
+    "evaluation_status": {
+      "type": "string",
+      "enum": [
+        "Requested",
+        "Shipped",
+        "Received",
+        "Under Evaluation",
+        "Evaluated"
+      ],
+      "default": "Requested"
+    },
+    "quality_result": {
+      "type": "string",
+      "enum": [
+        "Pending",
+        "Pass",
+        "Conditional Pass",
+        "Fail"
+      ],
+      "default": "Pending"
+    },
+    "taste_notes": {
+      "type": "string"
+    },
+    "appearance_notes": {
+      "type": "string"
+    },
+    "texture_notes": {
+      "type": "string"
+    },
+    "internal_feedback": {
+      "type": "string"
+    },
+    "final_decision": {
+      "type": "string",
+      "enum": [
+        "Pending",
+        "Approved",
+        "Rejected",
+        "Re-sample Required"
+      ],
+      "default": "Pending"
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "supplier_name",
+    "product",
+    "requested_date"
+  ]
+}

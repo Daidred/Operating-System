@@ -1,0 +1,54 @@
+{
+  "name": "DailyTask",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "Low",
+        "Medium",
+        "High",
+        "Urgent"
+      ],
+      "default": "Medium"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "Follow-up",
+        "Quotation",
+        "Sample",
+        "Document",
+        "Meeting",
+        "Email",
+        "Other"
+      ],
+      "default": "Other"
+    },
+    "due_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "done": {
+      "type": "boolean",
+      "default": false
+    },
+    "notes": {
+      "type": "string"
+    },
+    "project_id": {
+      "type": "string",
+      "description": "Linked sourcing project ID"
+    },
+    "project_name": {
+      "type": "string",
+      "description": "Linked sourcing project name (denormalized)"
+    }
+  },
+  "required": [
+    "title"
+  ]
+}

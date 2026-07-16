@@ -1,0 +1,141 @@
+{
+  "name": "Shipment",
+  "type": "object",
+  "properties": {
+    "reference": {
+      "type": "string",
+      "description": "Internal PO reference number"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "Sea",
+        "Air"
+      ],
+      "description": "Transport mode"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Pending",
+        "In Transit",
+        "Arrived",
+        "Cleared",
+        "Delivered",
+        "Delayed"
+      ],
+      "default": "Pending"
+    },
+    "archived": {
+      "type": "boolean",
+      "default": false,
+      "description": "Archived shipment (completed/arrived)"
+    },
+    "supplier": {
+      "type": "string"
+    },
+    "origin": {
+      "type": "string"
+    },
+    "destination": {
+      "type": "string"
+    },
+    "etd": {
+      "type": "string",
+      "format": "date"
+    },
+    "eta": {
+      "type": "string",
+      "format": "date"
+    },
+    "actual_arrival": {
+      "type": "string",
+      "format": "date"
+    },
+    "swb_no": {
+      "type": "string"
+    },
+    "bl_no": {
+      "type": "string"
+    },
+    "awb_no": {
+      "type": "string"
+    },
+    "container_no": {
+      "type": "string"
+    },
+    "vessel_flight": {
+      "type": "string"
+    },
+    "incoterm": {
+      "type": "string",
+      "enum": [
+        "EXW",
+        "FOB",
+        "CFR",
+        "CIF",
+        "DAP",
+        "DDP",
+        "FCA",
+        "Other"
+      ]
+    },
+    "description": {
+      "type": "string"
+    },
+    "cbm": {
+      "type": "number"
+    },
+    "gross_weight": {
+      "type": "number"
+    },
+    "documents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "sublines": {
+      "type": "array",
+      "description": "Cargo line items from PO, with invoice qty comparison",
+      "items": {
+        "type": "object",
+        "properties": {
+          "code_no": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "number",
+            "description": "PO ordered quantity"
+          },
+          "invoice_qty": {
+            "type": "number",
+            "description": "Quantity from invoice (actual shipped)"
+          },
+          "unit": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "reference",
+    "mode",
+    "supplier"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "ProjectSupplierLink",
+  "type": "object",
+  "properties": {
+    "project_id": {
+      "type": "string"
+    },
+    "supplier_id": {
+      "type": "string"
+    },
+    "supplier_name": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "project_id",
+    "supplier_id",
+    "supplier_name"
+  ]
+}

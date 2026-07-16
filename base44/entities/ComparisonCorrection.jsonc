@@ -1,0 +1,63 @@
+{
+  "name": "ComparisonCorrection",
+  "type": "object",
+  "properties": {
+    "comparison_id": {
+      "type": "string"
+    },
+    "supplier_name": {
+      "type": "string"
+    },
+    "field_name": {
+      "type": "string"
+    },
+    "field_context": {
+      "type": "string"
+    },
+    "original_extracted": {
+      "type": "string"
+    },
+    "corrected_value": {
+      "type": "string"
+    },
+    "correction_type": {
+      "type": "string",
+      "enum": [
+        "header_field",
+        "line_item_match",
+        "quantity",
+        "price",
+        "description",
+        "unit",
+        "po_description",
+        "other"
+      ]
+    },
+    "invoice_description": {
+      "type": "string"
+    },
+    "po_description": {
+      "type": "string"
+    },
+    "match_confirmed": {
+      "type": "boolean"
+    },
+    "corrected_quantity": {
+      "type": "number"
+    },
+    "corrected_price": {
+      "type": "number"
+    },
+    "user_comment": {
+      "type": "string"
+    },
+    "corrected_by": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "comparison_id",
+    "field_name",
+    "corrected_value"
+  ]
+}

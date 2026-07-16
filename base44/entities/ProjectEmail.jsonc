@@ -1,0 +1,80 @@
+{
+  "name": "ProjectEmail",
+  "type": "object",
+  "properties": {
+    "project_id": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "string"
+    },
+    "body": {
+      "type": "string"
+    },
+    "sender": {
+      "type": "string"
+    },
+    "sender_name": {
+      "type": "string"
+    },
+    "recipients": {
+      "type": "string",
+      "description": "Comma-separated email addresses"
+    },
+    "direction": {
+      "type": "string",
+      "enum": [
+        "Sent",
+        "Received"
+      ],
+      "default": "Sent"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Sent",
+        "Received",
+        "Draft"
+      ],
+      "default": "Draft"
+    },
+    "sent_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "outlook_message_id": {
+      "type": "string",
+      "description": "Outlook message ID for deduplication"
+    },
+    "outlook_conversation_id": {
+      "type": "string"
+    },
+    "supplier_id": {
+      "type": "string"
+    },
+    "supplier_name": {
+      "type": "string"
+    },
+    "attachments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "project_id",
+    "subject"
+  ]
+}

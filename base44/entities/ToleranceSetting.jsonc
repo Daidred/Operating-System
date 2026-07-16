@@ -1,0 +1,26 @@
+{
+  "name": "ToleranceSetting",
+  "type": "object",
+  "properties": {
+    "price_tolerance_pct": {
+      "type": "number",
+      "description": "% tolerance for unit price differences",
+      "default": 1
+    },
+    "quantity_tolerance_pct": {
+      "type": "number",
+      "description": "% tolerance for quantity differences",
+      "default": 0
+    },
+    "description_similarity_threshold": {
+      "type": "number",
+      "description": "0-100 similarity score threshold for fuzzy matching",
+      "default": 75
+    },
+    "label": {
+      "type": "string",
+      "default": "default"
+    }
+  },
+  "required": []
+}

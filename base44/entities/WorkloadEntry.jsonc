@@ -1,0 +1,61 @@
+{
+  "name": "WorkloadEntry",
+  "type": "object",
+  "properties": {
+    "discrepancy_id": {
+      "type": "string",
+      "description": "ID of the related discrepancy"
+    },
+    "employee_name": {
+      "type": "string",
+      "description": "Name of the purchasing employee"
+    },
+    "hours_spent": {
+      "type": "number",
+      "description": "Hours spent on this task"
+    },
+    "overtime": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether this involved overtime"
+    },
+    "activity_type": {
+      "type": "string",
+      "enum": [
+        "Emergency Supplier Coordination",
+        "Additional Shipping Arrangements",
+        "Rework",
+        "Urgent Documentation",
+        "Extra Meetings",
+        "Container Changes",
+        "Re-Planning",
+        "Other"
+      ],
+      "description": "Type of additional work"
+    },
+    "urgency_level": {
+      "type": "string",
+      "enum": [
+        "Normal",
+        "High",
+        "Critical"
+      ],
+      "default": "Normal",
+      "description": "Urgency level of the task"
+    },
+    "estimated_cost": {
+      "type": "number",
+      "description": "Estimated cost of this workload item"
+    },
+    "comments": {
+      "type": "string",
+      "description": "Additional comments"
+    }
+  },
+  "required": [
+    "discrepancy_id",
+    "employee_name",
+    "hours_spent",
+    "activity_type"
+  ]
+}

@@ -1,0 +1,148 @@
+{
+  "name": "Discrepancy",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Brief title of the discrepancy"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the issue occurred"
+    },
+    "requester": {
+      "type": "string",
+      "description": "Email of the user who created the report"
+    },
+    "requester_name": {
+      "type": "string",
+      "description": "Display name of the requester"
+    },
+    "business_unit": {
+      "type": "string",
+      "enum": [
+        "Food Service",
+        "Retail",
+        "CTK",
+        "F&B",
+        "QA/QC",
+        "DC 1",
+        "DC 2",
+        "Marketing",
+        "Purchasing"
+      ],
+      "description": "Business unit responsible"
+    },
+    "issue_type": {
+      "type": "string",
+      "enum": [
+        "Wrong Forecast",
+        "Late Order Request",
+        "Incorrect SKU",
+        "Last-Minute Quantity Change",
+        "Missing Approval",
+        "Supplier Communication Failure",
+        "Urgent Import Request",
+        "Wrong Packaging Request",
+        "Inventory Mismatch",
+        "Sales Overcommitment",
+        "SOP Violation",
+        "Data Entry Error",
+        "Product Rejection",
+        "Quality Non-Conformance",
+        "Other"
+      ],
+      "description": "Type of operational issue"
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed description of the discrepancy"
+    },
+    "impact_level": {
+      "type": "string",
+      "enum": [
+        "Low",
+        "Medium",
+        "High",
+        "Critical"
+      ],
+      "description": "Severity of the impact"
+    },
+    "responsible_person": {
+      "type": "string",
+      "description": "Person responsible in the business unit"
+    },
+    "purchasing_hours_lost": {
+      "type": "number",
+      "description": "Total additional hours spent by purchasing"
+    },
+    "additional_cost": {
+      "type": "number",
+      "description": "Estimated additional cost in THB"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Open",
+        "Under Review",
+        "Validated",
+        "Resolved",
+        "Rejected"
+      ],
+      "default": "Open",
+      "description": "Current status"
+    },
+    "root_cause": {
+      "type": "string",
+      "description": "Identified root cause"
+    },
+    "root_cause_category": {
+      "type": "string",
+      "enum": [
+        "Forecast Error",
+        "Human Error",
+        "SOP Non-Compliance",
+        "Communication Breakdown",
+        "Planning Issue",
+        "Quality Rejection",
+        "Other"
+      ],
+      "description": "AI or manual root cause classification"
+    },
+    "corrective_action": {
+      "type": "string",
+      "description": "Corrective action taken or proposed"
+    },
+    "resolution_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the issue was resolved"
+    },
+    "attachments": {
+      "type": "array",
+      "description": "Evidence files (emails, screenshots, POs, etc.)",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "title",
+    "business_unit",
+    "issue_type",
+    "description",
+    "impact_level"
+  ]
+}

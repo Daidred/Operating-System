@@ -1,0 +1,126 @@
+{
+  "name": "Supplier",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "contact_person": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "contacts": {
+      "type": "array",
+      "description": "Additional contacts for this supplier",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "product_categories": {
+      "type": "string"
+    },
+    "certifications": {
+      "type": "string"
+    },
+    "factory_approval_status": {
+      "type": "string",
+      "enum": [
+        "Not Started",
+        "Pending",
+        "In Review",
+        "Approved",
+        "Rejected"
+      ],
+      "default": "Not Started"
+    },
+    "reliability_rating": {
+      "type": "number"
+    },
+    "price_competitiveness_rating": {
+      "type": "number"
+    },
+    "quality_rating": {
+      "type": "number"
+    },
+    "communication_rating": {
+      "type": "number"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "last_contact_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "next_followup_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Active",
+        "Inactive",
+        "Blacklisted",
+        "Approved",
+        "Rejected"
+      ],
+      "default": "Active"
+    },
+    "approval_status": {
+      "type": "string",
+      "enum": [
+        "Pending Approval",
+        "Approved",
+        "Rejected"
+      ],
+      "default": "Pending Approval"
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "name",
+    "country"
+  ]
+}

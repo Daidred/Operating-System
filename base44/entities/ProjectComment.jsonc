@@ -1,0 +1,34 @@
+{
+  "name": "ProjectComment",
+  "type": "object",
+  "properties": {
+    "project_id": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    },
+    "author_name": {
+      "type": "string"
+    },
+    "author_email": {
+      "type": "string"
+    },
+    "comment_type": {
+      "type": "string",
+      "enum": [
+        "Note",
+        "Phone Call",
+        "Meeting",
+        "Negotiation",
+        "Follow-up",
+        "Other"
+      ],
+      "default": "Note"
+    }
+  },
+  "required": [
+    "project_id",
+    "text"
+  ]
+}

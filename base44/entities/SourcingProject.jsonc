@@ -1,0 +1,98 @@
+{
+  "name": "SourcingProject",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "product_category": {
+      "type": "string",
+      "enum": [
+        "Shrimp",
+        "Salmon",
+        "Tuna",
+        "Crab",
+        "Squid",
+        "Shellfish",
+        "Value-Added",
+        "Frozen Seafood",
+        "Fresh Seafood",
+        "Other"
+      ]
+    },
+    "product_specification": {
+      "type": "string"
+    },
+    "target_origin": {
+      "type": "string"
+    },
+    "target_price": {
+      "type": "number"
+    },
+    "target_price_currency": {
+      "type": "string",
+      "default": "USD"
+    },
+    "target_volume": {
+      "type": "string"
+    },
+    "required_certifications": {
+      "type": "string"
+    },
+    "customer_request": {
+      "type": "string"
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "Low",
+        "Medium",
+        "High",
+        "Urgent"
+      ],
+      "default": "Medium"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Idea",
+        "Supplier Search",
+        "Supplier Contacted",
+        "Quotation Received",
+        "Sample Requested",
+        "Sample Testing",
+        "Negotiation",
+        "Approved",
+        "Rejected",
+        "Paused"
+      ],
+      "default": "Idea"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "deadline": {
+      "type": "string",
+      "format": "date"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "next_action": {
+      "type": "string"
+    },
+    "next_followup_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "archived": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "name",
+    "product_category"
+  ]
+}

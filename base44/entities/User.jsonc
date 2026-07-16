@@ -1,0 +1,29 @@
+{
+  "name": "User",
+  "type": "object",
+  "properties": {
+    "role": {
+      "type": "string",
+      "enum": [
+        "admin",
+        "purchasing_manager",
+        "purchasing_staff",
+        "bu_manager",
+        "executive"
+      ],
+      "default": "purchasing_staff"
+    },
+    "department": {
+      "type": "string",
+      "enum": [
+        "Purchasing",
+        "Food Service",
+        "Retail",
+        "CTK",
+        "F&B",
+        "Executive"
+      ],
+      "description": "Department the user belongs to"
+    }
+  }
+}

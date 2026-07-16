@@ -1,0 +1,64 @@
+{
+  "name": "SupplierDocument",
+  "type": "object",
+  "properties": {
+    "supplier_id": {
+      "type": "string"
+    },
+    "supplier_name": {
+      "type": "string"
+    },
+    "document_type": {
+      "type": "string",
+      "enum": [
+        "HACCP",
+        "BRC",
+        "IFS",
+        "ASC",
+        "MSC",
+        "BAP",
+        "FDA",
+        "EU Approval",
+        "Health Certificate",
+        "Company Profile",
+        "Product Specification",
+        "Other"
+      ]
+    },
+    "received": {
+      "type": "boolean",
+      "default": false
+    },
+    "expiry_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "file_url": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "supplier_name",
+    "document_type"
+  ]
+}
